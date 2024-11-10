@@ -1,4 +1,4 @@
-\subsection{Lineare Regression}
+\subsection{Lineare/Polynominelle Regression}
 \label{linearRegression}
 Optimale Anpassung einer Geraden an eine gegebene Menge an Punkten, d.h. für eine Funktion
 
@@ -36,6 +36,8 @@ wobei $X_D$ eine Matrix mit den Eingabedaten (zzgl. führende 1-Spalte) und $y_D
 
 Lokales Minimum = Globales Minimum, da die Kostenfunktion konvex ist. Lösung numerisch oder per \emph{Gradient Descent} $\rightarrow$ ist bei großen Trainingsdatensätzen und/oder vielen Attributen die praktikabelste Methode (s. Skript S.~13: $\nabla_\Theta L(D,\Theta)=0 \Leftrightarrow (X_D^TX_D)^{-1}X_D^Ty_D=\Theta$, wobei inverse von $X_D^TX_D$ sehr rechenaufwändig ist).\\
 
+Erweiterung auf Polynome höheren Grades durch (Kreuz-)Multiplikation bestehender Merkmale $\rightarrow$ Modell ist linear bzgl. des erweiterten Merkmalsraums und erscheint polynominell bei Projektion auf den ursprünglichen Merkmalsraum.\\
+
 Evaluation  mittels \textbf{\underline{Bestimmtheitsmaß}} (=normalisierte Variante des quadratischen Fehlers):
 
 \begin{equation*}
@@ -51,35 +53,31 @@ Evaluation  mittels \textbf{\underline{Bestimmtheitsmaß}} (=normalisierte Varia
     \item Je näher $R^2(D^{\text{test}},f)$ an $R^2(D^{\text{train}},f)$, desto besser ist das Modell generalisiert
 \end{itemize}
 
+\underline{\textbf{Überanpassung}}: Modell passt sich zu stark an Trainingsdaten an, d.h. es wird zu komplex modelliert. Dies führt zu schlechterer Generalisierung auf Testdaten $\rightarrow$ \emph{Varianzfehler}\\
 
-% \begin{minted}{python}
-%     import numpy as np
-        
-%     def incmatrix(genl1,genl2):
-%         m = len(genl1)
-%         n = len(genl2)
-%         M = None #to become the incidence matrix
-%         VT = np.zeros((n*m,1), int)  #dummy variable
-        
-%         #compute the bitwise xor matrix
-%         M1 = bitxormatrix(genl1)
-%         M2 = np.triu(bitxormatrix(genl2),1) 
-    
-%         for i in range(m-1):
-%             for j in range(i+1, m):
-%                 [r,c] = np.where(M2 == M1[i,j])
-%                 for k in range(len(r)):
-%                     VT[(i)*n + r[k]] = 1;
-%                     VT[(i)*n + c[k]] = 1;
-%                     VT[(j)*n + r[k]] = 1;
-%                     VT[(j)*n + c[k]] = 1;
-                    
-%                     if M is None:
-%                         M = np.copy(VT)
-%                     else:
-%                         M = np.concatenate((M, VT), 1)
-                    
-%                     VT = np.zeros((n*m,1), int)
-        
-%         return M
-%     \end{minted}
+\underline{\textbf{Unteranpassung}}: Modell ist nicht ausdrucksstark genug; Trainings- und Testdaten werden unzureichend modelliert $\rightarrow$ \emph{Verzerrungsfehler}\\
+
+Ermittlung der \textbf{optimalen Modellkomplexität} durch Betrachtung der Kostenfunktionswerte oder Bestimmtheitsmaße bei steigender Komplexität:
+\begin{itemize}
+    \item Trainingsdten: Je komplexer das Modell, desto höher die Bestimmtheit
+    \item Testdaten
+    \begin{itemize}
+        \item Bestimmtheit nimmt zunächst ebenfalls zu (das Modell ist noch unterangepasst)
+        \item Ab einem gewissen Punkt nimmt die Bestimmtheit ab: Das Modell ist überangepasst
+    \end{itemize}
+    \item Optimaler Punkt: Modellkomplexität, bei der die Bestimmtheit bzgl. der Testdaten maximal ist
+\end{itemize}
+
+Automatische Lösung des \emph{Verzerrungs-Varianz-Dilemmas} durch \textbf{\underline{Regularisierung}}: Hinzufügen eines mit $\lambda$  (\emph{Regularisierungsparamter}) gewichteten Strafterms (\emph{Tikhonov-Regularisierer} $R_T$) zur Kostenfunktion, der die Größe der Parametervektoren begrenzt. Sog. \emph{Ridge-Regression}:\\
+
+\begin{equation*}
+    L_T(D, \Theta) = \Vert X_D\Theta-y_D\Vert^2 + \lambda \sum_{\textbf{i=\underline{1}}}^{n}\Theta_i^2\\
+\end{equation*}
+
+\begin{itemize}
+    \item Regularisierer wird ohne $\Theta_0$ berechnet
+    \item Je mehr $\Theta_i \neq 0$, desto größer wird der Tikhonov-Regularisierer $\rightarrow$ Kosten steigend
+    \item Einbeziehung von $\lambda \sum_{i=1}^{n}\Theta_i^2$ erzwingt Fokussierung auf möglichst einfache Funktionen
+    \item Kleines $\lambda\rightarrow$ Überanpassung, großes $\lambda\rightarrow$ Unteranpassung
+\end{itemize}
+
