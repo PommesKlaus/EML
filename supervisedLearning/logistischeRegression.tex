@@ -1,3 +1,32 @@
 \subsection{Logistische Regression}
 \label{LogRegression}
-Klassifikation
+Diskreter Wertebereich der Zielvariablen $y^{(i)}$, idR. endlich und oft auch nur binär ($y^{(i)} \in \{0,1\}$). Klassen haben idR. keine (eindeutige) Ordnung.\\
+
+Einsetzen eines linearen Modells $h_\Theta$ in eine Funktion $g(z)=\frac{1}{1+e^{-z}}$ mit dem Zielbereich $(0,1)$  ergibt sog. \emph{Sigmoid-Funktion}:
+
+\begin{equation*}
+    h_\Theta^{\text{logit}}(x) = \frac{1}{1+e^{-(\Theta_0 + \Theta_1x_1 + \dots + \Theta_nx_n)}}
+\end{equation*}
+
+Klassifikation durch Schwellwert $0.5$:
+
+\begin{equation*}
+    \text{clf}_f(x) = \left\{
+        \begin{array}{ll}
+            1 & \text{falls } h_\Theta^{\text{logit}}(x) \geq 0.5\\
+            0 & \text{falls } h_\Theta^{\text{logit}}(x) < 0.5
+        \end{array}
+    \right.
+\end{equation*}\\
+
+und Bewertung mittels der \emph{logistischen Kostenfunktion $L^\text{logit}$}:
+
+\begin{equation*}
+    L^\text{logit}(D, f) = -\sum_{i=1}^{m}\left[\underset{a}{\underbrace{y^{(i)}\ln(f(x^{(i)}))}} + \underset{b}{\underbrace{(1-y^{(i)})\ln(1-f(x^{(i)}))}}\right]
+\end{equation*}
+
+Bei $y=1$ wird $b = 0$, bei $y=0$ wird $a=0$ und es ergibt sich:\\
+
+\begin{tabular*}{|c|c|c|}
+
+\end{tabular*}
