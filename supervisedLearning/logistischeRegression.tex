@@ -19,14 +19,49 @@ Klassifikation durch Schwellwert $0.5$:
     \right.
 \end{equation*}\\
 
-und Bewertung mittels der \emph{logistischen Kostenfunktion $L^\text{logit}$}:
+bzw. bei $n$ Klassen diejenige Klasse $k$, für die $h_\Theta^{\text{logit}}(x)_k$ maximal ist. Bewertung mittels der \emph{logistischen Kostenfunktion $L^\text{logit}$}:
 
 \begin{equation*}
     L^\text{logit}(D, f) = -\sum_{i=1}^{m}\left[\underset{a}{\underbrace{y^{(i)}\ln(f(x^{(i)}))}} + \underset{b}{\underbrace{(1-y^{(i)})\ln(1-f(x^{(i)}))}}\right]
-\end{equation*}
+\end{equation*}\\
 
-Bei $y=1$ wird $b = 0$, bei $y=0$ wird $a=0$ und es ergibt sich:\\
+Bei $y=1$ wird $b = 0$, bei $y=0$ wird $a=0$ und es ergibt sich:
 
-\begin{tabular*}{|c|c|c|}
 
-\end{tabular*}
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $f(x)$ & $y$ & $L^\text{logit}(D, f)$\\
+        \hline
+        1 & 1 & 0\\
+        1 & 0 & $\infty$\\
+        0 & 0 & 0\\
+        0 & 1 & $\infty$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\textbf{Ziel}: Minimierung der Kostenfunktion, wobei es sich um ein konvexes Optimieungsproblem handelt (d.h. es existiert nur ein globales Minimum). Effiziente Lösung mithilfe numerischer Methoden wie \emph{Gradient Descent} möglich.\\
+
+\textbf{Polynominelle Erweiterung} sowie \textbf{Regularisierung} analog zur \emph{linearen Regression}.\\
+
+\textbf{Evaluation}: Berechnung der \emph{Konfustionsmatrix} und Einsetzen in die \emph{Klassifikationsmetriken}:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        & $y=1$ & $y=0$\\
+        \hline
+        $\text{clf}=1$ & TP & FP\\
+        $\text{clf}=0$ & FN & TN\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item \emph{Accuracy/Genauigkeit}: $\text{acc}(D, \text{clf})=\frac{TP+TN}{TP+TN+FP+FN}\rightarrow$ Verhältnis der korrekt klassifizierten Instanzen zu allen Instanzen; bei ungleicher Klassenrepräsentation nicht geeignet
+    \item \emph{Precision}: $\text{prec}(D, \text{clf})=\frac{TP}{TP+FP}\rightarrow$ wie viele der positiv klassifizierten Instanzen sind tatsächlich positiv?
+    \item \emph{Recall/Sensitivität}: $\text{rec}(D, \text{clf})=\frac{TP}{TP+FN}\rightarrow$ wie viele Ist-positive Instanzen wurden korrekt klassifiziert?
+    \item \emph{F1-Score}: $\text{F1}(D, \text{clf})=2\cdot\frac{\text{Precision}\cdot\text{Recall}}{\text{Precision}+\text{Recall}}\rightarrow$ harmonisches Mittel von Precision und Recall (Gesamtqualität)
+\end{itemize}
+
