@@ -1,21 +1,17 @@
 \subsection{Bayes-Klassifikator}
 \label{bayes}
 
-\underline{Optimalität}: Gegeben einem beobachteten Datensatz $D$, suche die wahrscheinlichste Hypothese $h$, die den Wert $P(h\vert D)$ maximiert.
+\underline{Optimalität}: Gegeben einem beobachteten Datensatz $D$, suche die wahrscheinlichste Hypothese $h$, die den Wert $P(h\vert D)$ maximiert.\\
 
-\begin{center}
-    \begin{tabular}{|l|c|l|}
-        \hline
-        Bayes Theorem                               & $P(h\vert D)=\frac{P(\vert h)P(h)}{P(D)}$ &\\
-        \emph{a posteriori} Wkt. von $h$            & $P(h\vert D)$ & kann im allg. nicht direkt bestimmt werden\\
-        \emph{a priori} Wkt von $h$                 & $P(h)$ & wie wahrscheinlich ist eine Hypothese $\rightarrow$ Hintergrundwissen oder Annahme von Gleichverteilung\\
-                                                    & $P(D)$ & Wkt, dass $D$ beobachet wurde\\
-                                                    & $P(D\vert h)$ & Wkt, $D$ zu beobachten, gegeben dass $D$ von $h$ \emph{generiert} wurde $\rightarrow$ wie gut erklärt $h$ den Datensatz $D$? Ist einfacher abzuschätzen als $P(h\vert D)$\\
-        \emph{Maximum-A-Posteriori (MAP)}-Hypothese & $h* = \text{arg} \underset{h\in H}{\max}P(h\vert D)$ & \\
-        \emph{Maximum-Likelihood (ML)}-Hypothese    & $h* = \text{arg} \underset{h\in H}{\max}P(D\vert h)$ & \\
-        \hline
-    \end{tabular}
-\end{center}
+\begin{itemize}
+    \item \textbf{Bayes Theorem}: $P(h\vert D)=\frac{P(\vert h)P(h)}{P(D)}$
+    \item \textbf{a posteriori} Wkt. von $h$: $P(h\vert D)$ $\rightarrow$ kann im allg. \underline{nicht} direkt bestimmt werden
+    \item \textbf{a priori} Wkt von $h$: $P(h)$ $\rightarrow$ wie wahrscheinlich ist eine Hypothese $\rightarrow$ Hintergrundwissen oder Annahme von Gleichverteilung
+    \item $P(D)$ $\rightarrow$ Wkt, dass $D$ beobachet wurde
+    \item $P(D\vert h)$ $\rightarrow$ Wkt, $D$ zu beobachten, gegeben dass $D$ von $h$ \emph{generiert} wurde $\rightarrow$ wie gut erklärt $h$ den Datensatz $D$? Ist einfacher abzuschätzen als $P(h\vert D)$
+    \item \textbf{Maximum-A-Posteriori (MAP)}-Hypothese $\rightarrow$ $h* = \text{arg} \underset{h\in H}{\max}P(h\vert D)$
+    \item \textbf{Maximum-Likelihood (ML)}-Hypothese $\rightarrow$ $h* = \text{arg} \underset{h\in H}{\max}P(D\vert h)$ \\
+\end{itemize}
 
 Es lässt sich zeigen, dass das Problem der \textbf{(linearen) Regression} mit $\Theta* = \text{arg} \min{Theta}\sum_{i=1}^m (\Theta^T)x^{(i)}-y^{(i)})^2$ (d.h. Nutzung der quadratischen Kostenfunktion) eine ML-Hypothese bestimmt, die lineare Regression also nach Bayes'schen Grundsätzen plausibel ist. Dabei wird angenommen, dass die Werte $y{(i)}$ eines Datensatzes $D$ durch den wahren Wert der Merkmalsausprägung $\hat{y}^{(i)}$ und einen Fehler $\epsilon^{(i)}$ bestimmt sind. Bzgl. $\epsilon^{(i)}$ wird üblicherweise Normalverteilung angenommen (Herleitung: Skript S.~59).\\
 
