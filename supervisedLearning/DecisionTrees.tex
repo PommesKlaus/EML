@@ -28,7 +28,7 @@ Lösung üblicherweise nicht durch Lösen eines Optimierungsproblems sondern dur
 
 Merkmal, nach dem die jeweils nächste Aufteilung erfolgt soll so gewählt werden, dass der Baum möglichst klein wird $\rightarrow$ wähle Merkmal mit höchstem Informationsgewinn (IG) unter Verwendung der \emph{Entropie}.
 \begin{itemize}
-    \item \textbf{Entropie}: $H(D)=-\sum^k_i=1\text{releative Häufigkeit}_i \times \text{log}_10 (\text{releative Häufigkeit}_i) \rightarrow$ je höher $H(D)$, desto gleichverteilter treten die Klassen auf (z.B. $=0$, wenn alle Element einer einzelnen Klasse angehören; dann steht Klassifikation fest).
-    \item \textbf{bedingte Entropie}: Was passiert mit der Entropie, wenn ein bestimmtes Merkmal ausgewählt wird? $H(D,i)=\sum \text{rel. Häufigkeit der Merkmalsausprägung} i \times \text{Entropie der Teilmenge} i$
+    \item \textbf{Entropie}: $H(D)=-\sum^k_{i=1}\text{releative Häufigkeit}_i \times \text{log}_{10} (\text{releative Häufigkeit}_i) \rightarrow$ je höher $H(D)$, desto gleichverteilter treten die Klassen auf (z.B. $=0$, wenn alle Element einer einzelnen Klasse angehören; dann steht Klassifikation fest).
+    \item \textbf{bedingte Entropie}: Was passiert mit der Entropie, wenn ein bestimmtes Merkmal ausgewählt wird? $H(D,i)=\sum \text{rel. Häufigkeit der Merkmalsausprägung}_i \times \text{Entropie der Teilmenge}_i$
     \item \textbf{Informationsgewinn}: $IG(D, i) = H(D) - H(D\vert i) \rightarrow$ gibt an, wie sehr die Merkmalsauswahl i die Daten in D nach den Klassen (vor-)sortiert. Je höher der Informationsgewinn, desto besser klassifiziert das Merkmal i den Datensatz D
 \end{itemize}
