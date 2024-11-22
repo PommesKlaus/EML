@@ -3,7 +3,7 @@
 \underline{Grundidee}: Klassifizierung eines Objekts anhand der Klassenzugehörigkeit seiner $k$ nächsten Nachbarn (aus $X_\text{Train}$). Bei mehr als $k$ nächsten Nachbarn wird eine zufällige Auswahl der möglichen Kandidaten gewählt. Wenn Klassenzugehörigkeit nicht eindeutig ist (z.B. $k=3$ und alle Elemente haben unterschiedliche Klassen) wird eine zufällige gewählt. Parametrisierung:
 
 \begin{itemize}
-    \item Abstandsmessung z.B. per \emph{euklidischer Norm} $\|\cdot \|=\sqrt{(x^i_1-x^j_1)^2+\dots +(x^i_n-x^j_n)^2}$ oder \emph{Manhattan-Norm} $=\sum_{l=1}^{n}|x^i_l-x^j_l|$ (o.a.).
+    \item Abstandsmessung z.B. per \emph{euklidischer Norm} oder \emph{Manhattan-Norm} $=\sum_{l=1}^{n}|x^i_l-x^j_l|$ (o.a.).
     \item Selektion der Klasse anhand der Mehrheitsentscheidung der $k$ nächsten Nachbarn ($maj$) oder anderen (z.B. mit Gewichtung).
     \item Typische Werte für $k$ liegen im Bereich 1 bis 10, wobei kleinere $k$ zu \emph{Überanpassung} und größere $k$ zu \emph{Unteranpassung} neigen.
 \end{itemize}

@@ -1,3 +1,36 @@
 \subsection{K-Means Clustering}
-\label{kmeans}
-Test
+\label{kmeans}\underline{Idee}: Eine Datenmenge $E$ so in Teilmengen zu partitionieren, dass Datenpunkte in jedem $E_i$ \emph{ähnlich} zueinander sind, wohingegen Datenpunkte in unterschiedlichen $E_i$ \emph{unterschiedlich} sind.\\
+
+Klassischer Algorithmus ist der \textbf{K-Means-Algorithmus}, der große Ähnlichkeit zum \emph{KNN-Algorithmus} hat. Naive Implementierung mittels \emph{Lloyds-Algorithmus}:
+
+\begin{itemize}
+    \item Gegeben eine Datenmenge $E$ und eine Anzahl $k$ an Clustern $\rightarrow k$ muss zwingend vorgegeben werden
+    \item Iterative Berechnung, beginnend bei zufälligen $k$ Zentren (\emph{Zentroiden}):
+    \begin{itemize}
+        \item Berechnet die euklidische Distanz zwischen jedem Datenpunkt und jedem Zentroiden
+        \item Weist jeden Datenpunkt dem nächstgelegenen Zentroiden zu
+        \item Berechnet die neuen Zentroiden als Mittelwert der Datenpunkte in jedem Cluster
+        \item Wiederholt die Schritte 2 und 3, bis sich die Zentroiden nicht mehr verändern
+    \end{itemize}
+    \item Wahl von $k$ und der Initialisierung der Zentroiden sind kritisch und beeinflussen das Ergebnis $\rightarrow$ Wiederholte Ausführung mit unterschiedlichen Parametern
+    \item \emph{Euklidische Distanz} $\rightarrow$ Hohe Anfälligkeit für unterschiedliche Skalen und Ausreißer; Normalisierung notwendig (z.B. durch \emph{z-Tranformation})
+\end{itemize}
+
+\textbf{externe Evaluation}: Clustering wird auf zusätzlichem Testdatensatz evaluiert, der die tatsächlichen Clusterzugehörigkeiten enthält. Aufwendig, da Annotation meistens manuell erfolgen muss. $\rightarrow$ Verwendung der gleichen Metriken wie bei überwachten Lernen (Genauigkeit, F1,...)\\
+
+\textbf{interne Evaluation}: Orientierung am eigentlichen Optimierungsziel (finde Zentroiden mit minimalen quadrierten Distanzen aller Datenpunkte zu den ihnen zugewiesenen Zentroiden). Formal definiert durch \emph{Trägheitsmaß (engl. inertia)}:\\
+\begin{equation*}
+    \text{inertia}(\text{cluster}, E, m_1\dots m_k)=\sum_{x\in E}\|x-m_{\text{cluster}(x)}\|^2    
+\end{equation*}
+
+\begin{itemize}
+    \item finden von \emph{cluster} und $m_1\dots m_k$, so dass \emph{inertia} minimal ist, ist \emph{NP-schwer}, weshalb K-Means auch nur versucht eine Annäherung an das Optimum zu erreichen.
+    \item tatsächliche Wert von \emph{inertia} nicht leicht zu interpretieren, da hohe Abhängigkeit von der Skalierung $\rightarrow$ vom Trägheitswert lässt sich keine Aussage zur Güte des Clusterings ableiten
+    \item Vergleich von Trägheitswerten unterschiedlicher Clusterings ist möglich $\rightarrow$ Clusterings müssen über die gleiche Clusteranzahl verfügen
+    \item Je mehr Cluster , desto geringer ist üblicherweise die Trägheit
+    \item Wenn $k=m$ (ein Cluster pro Datenpunkt), dann ist die Trägheit $0$
+    \item Verwendung des Trägheitsmaßes, um die optimale Clusteranzahl zu bestimmen $\rightarrow$ \emph{Elbow-Methode}: Berechnung der Trägheit für unterschiedliche Clusteranzahlen und Bestimmung des Knickpunktes
+\end{itemize}
+
+
+\textbf{K-Means++}: Verbesserte Initialisierung der Zentroiden, um Konvergenz zu beschleunigen: Wähle Zentroiden im 1. Durchlauf wie bisher aus vorhandenen Datenpunkten. Alle folgenden Zentroiden werden mit der gewichteten Wahrscheinlichkeit ihrer Distanz zu bereits gewählten Zentroiden ausgewählt. \underline{Ergebnis}: Der Trägheitswert des errechneten Clusterings ist maximal um einen Faktor $O(\log k)$ größer als der Trägheitswert des optimalen Clusterings.\\
