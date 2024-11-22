@@ -1,3 +1,12 @@
 \subsection{Anomalieerkennung}
 \label{anomalieerkennung}
-Test
+\underline{Idee}: Identifikation von Datenpunkten, die sich signifikant von der Mehrheit der Daten unterscheiden.\\
+
+Wenn abnormale Datenpunkte bekannt sind, kann man das Problem als überwachtes Lernproblem betrachten. Ansonsten als unüberwachtes Lernproblem.\\
+
+\textbf{Dichteabschätzung einer Normalverteilung}: (Maximum-Likelihood-Methode)
+\begin{itemize}
+    \item Ein Datenpunkt ist abnormal, wenn die Wahrscheinlichkeit $p^E(x)<\epsilon$, mit dem Schwellwert $\epsilon\in [0,1]$
+    \item Annahme 1: Merkmale sind \emph{unabhängig} voneinander, d.h. $p^E(x)=p^E_1(x_1)\cdot \ldots  \cdot p^E_n(x_n)$
+    \item Annahme 2: Merkmalsausprägungen eines jeden Merkmals $x_i$ sind \emph{normalverteilt}, d.h. es gilt \\$p^E_i(x_i)=\frac{1}{\sqrt{2\pi}\sigma_i}e^{\left(-\frac{(x_i-\mu_i)^2}{2\sigma_i^2}\right)}$ mit Mittelwert $\mu_i=\frac{1}{m}\sum_{j=1}^{m}x_i^{(j)}$ und Varianz $\sigma_i^2=\frac{1}{m}\sum_{j=1}^{m}(x_i^{(j)}-\mu_i)^2$
+\end{itemize}

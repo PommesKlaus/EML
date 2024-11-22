@@ -1,3 +1,16 @@
 \subsection{Assoziationsregeln}
 \label{assoziationsregeln}
-Test
+
+\underline{Idee}: Entdeckung häufig zusammen auftretender Mengen von Elementen, um Zusammenhänge zwischen Attributen zu identifizieren.\\
+
+\textbf{\underline{Metriken}} (liegen stets zwischen $0$ und $1$, sollten beide möglichst hoch sein):
+
+\begin{itemize}
+    \item \textbf{Support}: Anteil der Transaktionen, in denen die Regel gilt $\rightarrow$ wie \emph{oft} kann eine Regel angewendet werden?
+    \item \textbf{Konfidenz}: Anteil der Transaktionen, in denen $A$ und $B$ gemeinsam vorkommen, an den Transaktionen, in denen $A$ vorkommt $\text{conf}_F(A\Rightarrow B)=\frac{\text{support}(A\cup B)}{\text{support}(A)} \rightarrow$ wie \emph{gut} bildet die Regel den Zusammenhang zwischen Prämisse und Konklusion ab?
+\end{itemize}
+
+
+\textbf{A-Priori-Algorithmus}: \underline{Idee}: Ober-Mengen nicht häufiger Teilmengen müssen ebenfalls nicht häufig sein und können ignoriert werden. \emph{Bottom-Up}-Ansatz, um Kombinationen von Attributen zu finden, die die Mindestunterstützung (\emph{minsupp} und \emph{minconf}) erfüllen.\\
+
+\textbf{FP-Growth-Algorithmus}: Weiterentwickelte Implementierung, die auf \emph{Frequent Pattern Trees} basiert und im Durchnitt singifikant weniger Kandidaten berücksichtigt $\rightarrow$ damit signifikant schneller als oben\\

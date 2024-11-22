@@ -1,4 +1,21 @@
 \subsection{Hierarchisches Clustering}
 \label{hierarchischesClustering}
 
+\underline{Idee}: Es gibt keine allgemeingültige Definition der \emph{korrekten} Clusteranzahl; je nach Anwendung können für denselben Datensatz verschiedene Clusterzahlen Sinn ergeben. Durch hierarchische Aufteilung der Datenmenge in einem \textbf{Dendrogramm}
+\begin{itemize}
+    \item besserer Einblick in Zusammenhänge und Unterstützung bei der Findung der optimalen Clusterzahl.
+    \item jeder innere Knoten $v$ mit Kindern $v_1 \dots v_k$ repräsentiert ein Cluster, das durch die Vereinigung der Cluster $v_1 \dots v_k$ entsteht.
+    \item Blätter repräsentieren die einzelnen Datenpunkte (als eigener Cluster).
+    \item Wurzel enthält das gröbste Clustering (alle Datenpunkte in einem Cluster).
+    \item \emph{Quantitatives Dendrogramm} erlaubt die quantitative Abschätzung zur Plausibilität verschiedener Hierarchiestufen.
+\end{itemize}
 
+\textbf{Agglomeratives Clustering} (bottom-up): Man beginnt mit jedem Datenpunkt als eigenem Cluster und fügt iterativ die zwei ähnlichsten Cluster zusammen, bis nur noch ein Cluster übrig ist. Z.B. Verwendung des \textbf{Single-Link-Clustering}:
+\begin{itemize}
+    \item Berechnung der Distanz zwischen allen Clustern $\rightarrow$ Je nach Distanzfunktion andere Ergebnisse; hier: $D_\text{single}(E_1, E_2)=\min_{x_1\in E_1, x_2\in E_2}\|x_1-x_2\|$ (=minimaler euklidischer Abstand), Merkmale müssen entsprechend skaliert sein
+    \item Zusammenfassung der beiden ähnlichsten Cluster $\rightarrow$ bei Uneindeutigkeit zufällige Wahl
+    \item Wiederholung der Schritte 1 und 2, bis nur noch ein Cluster übrig ist
+    \item liefert relativ \emph{langgezogene} Cluster und eignet sich für entsprechende \emph{kettenförmige} Clusterstrukturen
+\end{itemize}
+
+\textbf{Divisives Clustering} (top-down): Man beginnt mit allen Datenpunkten in einem Cluster und teilt iterativ das Cluster in zwei Teilmengen, bis jeder Datenpunkt in einem eigenen Cluster ist. Z.B. Verwendung des \textbf{Divisive Analysis Clustering (DIANA)}: deutlich aufwendiger als agglomeratives Clustering, da alle möglichen Clusterkombinationen betrachtet werden müssen. Deshalb wenig Praxisrelevanz.
