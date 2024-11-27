@@ -1,3 +1,11 @@
 \subsection{Markov-Entscheidungsprozesse}
 \label{markov}
-Test
+Für alle Varianten des \emph{Reinforcement Learning} werden \emph{Markov-Entscheidungsprozesse} (MEP) als Mittel zur Formalisierung dynamischer Prozesse (Modell der Umgebung) verwendet.\\
+
+Der \emph{Discountfaktor} $\gamma\in [0,1]$ bestimmt beim \emph{diskontierten Nutzen} $U_D^\gamma(e)=\sum_{i>0}\gamma^{i-1}R(s_{i-1}, a_i, s_i)$, wie stark zukünftige Belohnungen gewichtet werden. Bei kleinerem $\gamma$ wird die Zukunft weniger stark gewichtet, d.h. es werden Strategien bevorzugt, die schnell hohe Belohnungen erhalten. Üblich: $\gamma$ wird echt kleiner, aber nahe 1 gewählt (z.B. $0.9$ oder $0.99$) $\rightarrow$ gewährleistet, dass der Nutzen $U_D^\gamma(e)$ stets endlich ist, selbst bei unendlich langen Episoden mit positiver Wahrscheinlichkeit.\\
+
+$U_D^\gamma(\pi)$ ist der erwartete durchschnittliche Nutzen aller aus $\pi$ generierten initialen Episoden, gewichtet nach deren Wahrscheinlichkeit.\\
+
+Ein Markov-Entscheidungsprozess kann durch ein Zustandsübergangsdiagramm formalisiert werden.\\
+
+Unterscheidung von \emph{konstanten Strategien} (sehen für jeden Zustand $s$ eine feste Aktion $a$ vor) und \emph{probabilistischen Strategien} (halten für jeden Zustand $s$ eine Wahrscheinlichkeitsverteilung über die auszuwählende Aktionen vor).\\
