@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.15)  27 NOV 2024 08:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.15)  28 NOV 2024 13:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -682,22 +682,22 @@ Overfull \hbox (4.0046pt too wide) in paragraph at lines 35--1
 \openout2 = `unsupervisedLearning/unsupervisedLearning.aux'.
 
  (./unsupervisedLearning/unsupervisedLearning.tex (./unsupervisedLearning/KMeans.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--3
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
  []
 
 ) (./unsupervisedLearning/HierarchischesClustering.tex
-Underfull \hbox (badness 10000) in paragraph at lines 36--1
+Underfull \hbox (badness 10000) in paragraph at lines 37--1
 
  []
 
@@ -730,7 +730,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-[9]) (./unsupervisedLearning/PCA.tex)) [10]
+[9]) (./unsupervisedLearning/PCA.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+<unsupervisedLearning/PCA_linReg.png, id=55, 435.6275pt x 396.48125pt>
+File: unsupervisedLearning/PCA_linReg.png Graphic file (type png)
+<use unsupervisedLearning/PCA_linReg.png>
+Package pdftex.def Info: unsupervisedLearning/PCA_linReg.png  used on input line 12.
+(pdftex.def)             Requested size: 145.11052pt x 132.06732pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+
+Overfull \hbox (0.17438pt too wide) in paragraph at lines 30--31
+[]\OT1/cmr/m/n/10 Retained Va-rian-ce: $\OML/cmm/m/it/10 retVar\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 E[]; E\OT1/cmr/m/n/10 ) = []$ $\OMS/cmsy/m/n/10 !$ \OT1/cmr/m/n/10 An-teil der Va-ri-anz von $\OML/cmm/m/it/10 E$\OT1/cmr/m/n/10 , der in $\OML/cmm/m/it/10 E[]$
+ []
+
+)) [10 <./unsupervisedLearning/PCA_linReg.png>]
 \openout2 = `reinforcementLearning/reinforcementLearning.aux'.
 
  (./reinforcementLearning/reinforcementLearning.tex
@@ -786,18 +816,18 @@ L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 18137 strings out of 476129
- 372177 string characters out of 5793186
+ 18147 strings out of 476129
+ 372536 string characters out of 5793186
  1942975 words of memory out of 5000000
- 39755 multiletter control sequences out of 15000+600000
+ 39765 multiletter control sequences out of 15000+600000
  563284 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  102i,23n,107p,729b,314s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/c/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (12 pages, 666248 bytes).
+ </home/c/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (12 pages, 691459 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 147 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

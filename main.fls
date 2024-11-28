@@ -336,6 +336,11 @@ INPUT ./unsupervisedLearning/PCA.tex
 INPUT ./unsupervisedLearning/PCA.tex
 INPUT ./unsupervisedLearning/PCA.tex
 INPUT unsupervisedLearning/PCA.tex
+INPUT ./unsupervisedLearning/PCA_linReg.png
+INPUT ./unsupervisedLearning/PCA_linReg.png
+INPUT ./unsupervisedLearning/PCA_linReg.png
+INPUT ./unsupervisedLearning/PCA_linReg.png
+INPUT ./unsupervisedLearning/PCA_linReg.png
 INPUT ./reinforcementLearning/reinforcementLearning.tex
 INPUT ./reinforcementLearning/reinforcementLearning.tex
 OUTPUT reinforcementLearning/reinforcementLearning.aux
@@ -414,4 +419,5 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
