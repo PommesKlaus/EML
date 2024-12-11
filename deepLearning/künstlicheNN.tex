@@ -73,7 +73,18 @@ Bei Verwendung der Sigmoid-Funktion $h^{\text{logit}}$ als Aktivierungsfunktion 
     \end{aligned}
 \end{equation*}
 
-Der Fehler im linearen Anteil $\delta(z_1^{(2)})$ des Output-Layers ist gegeben durch:
+Berechnung des Fehlers im linearen Anteil des Output-Layers durch:
+\begin{equation*}
+    \begin{aligned}
+        \boldsymbol{\delta(z_j^{(k)})}  &= \frac{\partial cost(y, a_1^{(2)})}{\partial z_1^{(2)}}
+    \end{aligned}
+\end{equation*}
+
+$\rightarrow$ Aktivierungsfunktion in Kostenfunktion einsetzen und nach $z_1^{(2)}$ ableiten.\\
+
+Wenn Kostenfunktion $=L^\text{logit}$ (Logistische KF) \underline{und} Aktivierungsfunktion $=h^\text{logit}$ (Sigmoid), gilt $\delta(z_i^{(l)})=a_i^{(l)}-y_i$.
+
+Der Fehler im linearen Anteil $\delta(z_1^{(2)})$ der Hidden Layer ist gegeben durch:
 \begin{equation*}
     \begin{aligned}
         \boldsymbol{\delta(z_j^{(k)})}  &= \text{act}'(z_j^{(k)})\cdot\sum_{i=1}^{n_{k+1}}\delta(z_i^{(k+1)})\cdot w_{ij}^{(k+1)}
