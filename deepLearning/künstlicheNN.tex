@@ -58,11 +58,46 @@ Bei Verwendung der Sigmoid-Funktion $h^{\text{logit}}$ als Aktivierungsfunktion 
     \caption{Ausgangsbeispiel mit $x_1=0.1$, $x_2=0.2$, $a_0^{(1)}=0.05$, $y=0.3$, $act=\text{ReLU}$, $L^{\text{logit}}$ und $\gamma=0.1$}
 \end{figure}
 
-\emph{\textbf{1. Forward-Pass}}: Berechne die Ausgabe des Netzes für einen gegebenen Eingabevektor $x$.
-
+\emph{\textbf{1. Forward-Pass}}: Berechne die Ausgabe des Netzes für einen gegebenen Eingabevektor $x \rightarrow$ Netzwerk von Input bis Output unter Berücksichtigung von Gewichten, Bias und Aktivierungsfunktionen durchrechnen.
 \begin{equation*}
     \begin{aligned}
-        z_1^{(1)} = w_0x_1+1x_0=1\cdot0.2+0.1=0.3 &\longrightarrow a_1^{(1)}=h^{relu}(z_1^{(1)}) = \max \left[ 0, 0.3\right] = 0.3\\
-        z_1^{(2)} = w_1a_1^{(1)}+1a_0^{(1)}=1.5\cdot0.3+0.05=0.5 &\longrightarrow a_1^{(2)}=h^{relu}(z_1^{(2)}) = \max \left[ 0, 0.5\right] = 0.5 = \Phi(x)\\
+        \boldsymbol{z_1^{(1)}} = w_0x_1+1x_0=1\cdot0.2+0.1=0.3 &\longrightarrow \boldsymbol{a_1^{(1)}}=h^{relu}(z_1^{(1)}) = \max \left[ 0, 0.3\right] = 0.3\\
+        \boldsymbol{z_1^{(2)}} = w_1a_1^{(1)}+1a_0^{(1)}=1.5\cdot0.3+0.05=0.5 &\longrightarrow \boldsymbol{a_1^{(2)}}=h^{relu}(z_1^{(2)}) = \max \left[ 0, 0.5\right] = 0.5 = \boldsymbol{\varPhi(x)}\\
+    \end{aligned}
+\end{equation*}\\
+
+\emph{\textbf{2. Kosten- und Fehlerberechnung}}: Berechne den Fehler des Netzes durch die Verlustfunktion $L$; beginne beim Output-Layer und rechne nach vorne.
+\begin{equation*}
+    \begin{aligned}
+        \boldsymbol{cost(y, a_1^{2})}  &= -(y\ln(a_1^{(2)})+(1-y)\ln(1-a_1^{(2)})) = -(0.3\cdot-0.693+0.7\cdot-0.693) = 0.693
     \end{aligned}
 \end{equation*}
+
+Der Fehler im linearen Anteil $\delta(z_1^{(2)})$ des Output-Layers ist gegeben durch:
+\begin{equation*}
+    \begin{aligned}
+        \boldsymbol{\delta(z_j^{(k)})}  &= \text{act}'(z_j^{(k)})\cdot\sum_{i=1}^{n_{k+1}}\delta(z_i^{(k+1)})\cdot w_{ij}^{(k+1)}
+    \end{aligned}
+\end{equation*}
+
+Fehler eines Neurons berechnet sich aus dem Produkt von
+\begin{itemize}
+    \item linearer Wert des aktuellen Neurons ($z_j^{(k)}$) eingesetzt in die Ableitung der Aktivierungsfunktion
+    \item Summe der Fehler der Neuronen der nächsten Schicht multipliziert mit den Gewichten der Verbindung zu diesen Neuronen\\
+\end{itemize}
+
+\emph{\textbf{3. Neuberechnung der Gewichte}}: Berechne die neuen Gewichte durch Anpassung der alten Gewichte um den Fehler zu minimieren.
+\begin{equation*}
+    \begin{aligned}
+        \boldsymbol{w_{ij}^{(k)_\text{neu}}}  &= w_{ij}^{(k)_\text{alt}}-\gamma\cdot\delta(z_j^{(k)})\cdot a_i^{(k-1)}
+    \end{aligned}
+\end{equation*}
+
+Neues Gewicht ergibt sich aus dem alten Gewicht abzüglich des Produkts aus
+\begin{itemize}
+    \item Lernrate $\gamma$
+    \item Fehler des Neurons
+    \item Ausgabe des Neurons der vorherigen Schicht\\
+\end{itemize}
+
+\emph{\textbf{4. Wiederhole 1.-3. Schritt}}: Forward-Pass, Neuberechnung des Fehlers und ggf. weitere Backpropagation zur Modellverbesserung
