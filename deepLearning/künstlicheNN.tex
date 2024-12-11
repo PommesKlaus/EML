@@ -73,7 +73,7 @@ Bei Verwendung der Sigmoid-Funktion $h^{\text{logit}}$ als Aktivierungsfunktion 
     \end{aligned}
 \end{equation*}
 
-Berechnung des Fehlers im linearen Anteil des Output-Layers durch:
+Berechnung des Fehlers im linearen Anteil des \underline{Output-Layers} durch:
 \begin{equation*}
     \begin{aligned}
         \boldsymbol{\delta(z_j^{(k)})}  &= \frac{\partial cost(y, a_1^{(2)})}{\partial z_1^{(2)}}
@@ -84,7 +84,7 @@ $\rightarrow$ Aktivierungsfunktion in Kostenfunktion einsetzen und nach $z_1^{(2
 
 Wenn Kostenfunktion $=L^\text{logit}$ (Logistische KF) \underline{und} Aktivierungsfunktion $=h^\text{logit}$ (Sigmoid), gilt $\delta(z_i^{(l)})=a_i^{(l)}-y_i$.
 
-Der Fehler im linearen Anteil $\delta(z_1^{(2)})$ der Hidden Layer ist gegeben durch:
+Der Fehler im linearen Anteil $\delta(z_1^{(2)})$ der \underline{Hidden Layer} ist gegeben durch:
 \begin{equation*}
     \begin{aligned}
         \boldsymbol{\delta(z_j^{(k)})}  &= \text{act}'(z_j^{(k)})\cdot\sum_{i=1}^{n_{k+1}}\delta(z_i^{(k+1)})\cdot w_{ij}^{(k+1)}
@@ -111,4 +111,16 @@ Neues Gewicht ergibt sich aus dem alten Gewicht abzüglich des Produkts aus
     \item Ausgabe des Neurons der vorherigen Schicht\\
 \end{itemize}
 
-\emph{\textbf{4. Wiederhole 1.-3. Schritt}}: Forward-Pass, Neuberechnung des Fehlers und ggf. weitere Backpropagation zur Modellverbesserung
+\emph{\textbf{4. Wiederhole 1.-3. Schritt}}: Forward-Pass, Neuberechnung des Fehlers und ggf. weitere Backpropagation zur Modellverbesserung\\
+
+\underline{\textbf{Auswahl des Trainingsdatensatzes}}: Gradient Descent mit gesamtem Datensatz kann u.U. sehr langsam sein, wenn $D$ sehr groß ist. Alternativen:
+\begin{itemize}
+    \item \emph{Stochastic Gradient Descent (SGD)}: Berechne den Fehler und die Gewichtsanpassung anhand eines zufällig gewählten Datenpunktes
+    \begin{itemize}
+        \item Vorteil: schnelleres Lernen
+        \item Nachteil: ungenaue Schätzung des Gradienten $\rightarrow$ nächstes lokales Minimum wird nicht zielstrebig angesteuert, Gesamtkosten können während des Lernens stark schwanken, keine Parallelisierbarkeit
+    \end{itemize}
+    \item \emph{Mini-Batch Gradient Descent (MBGD)}: Berechne den Fehler und die Gewichtsanpassung anhand einer zufällig gewählten Teilmenge des Datensatzes. Kompromiss zwischen SGD und GD mit geringerem Fluktuationsgrad. Parallelisierbarkeit indem die Batchgröße entsprechend der Anzahl zu Verfügung stehender Rechenkerne gewählt wird.
+\end{itemize}
+
+\underline{\textbf{Auswahl der Aktivierungsfunktion}}: Ableitung der Aktivierungsfunktion ist Bestandteil des Algorithmus. Bestimmte Funktionen können zu Problemen führen, wenn bei bestimmten (x)-Werten die Ableitung gegen 0 geht (z.B. Sigmoid-Funktion bei $x\geq3 \text{ oder } x\leq-3\rightarrow<0.1$; sog. \emph{vanishing gradient problem}). Ähnlich: \emph{Exploding Gradient Problem} bei Werten $>1$. Lösung: ReLU-Aktivierung, da für $x>0$ die Ableitung von $h^{relu}=1$ und damit gedeckelt. Nachteil: für $x<0$ ist die Ableitung stets $0\rightarrow$ Lösung durch Verwendung von \emph{splus}.
