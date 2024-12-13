@@ -1,3 +1,37 @@
 \subsection{Convolutional Neutral Networks (CNN)}
 \label{cnn}
-Test
+Spezielle Form des künstlichen neuronalen Netzes, das besonders für die Verarbeitung von Bildern, Zeitreihen oder natürliche Sprache geeignet ist.
+Ein klassisches \emph{Feedforward}-Netzwerk ist für die Verarbeitung von Bildern ungeeignet, da es die räumliche Struktur der Daten ignoriert (da ein Bild z.B. eine Tür überall haben kann, müsste es entsprechend komplex trainiert werden).
+CNNs hingegen nutzen die räumliche Struktur von Bildern aus, indem sie spezielle Schichten verwenden, die als Filter fungieren.\\
+
+Verwendung der Faltungsoperation ($*$):
+\begin{equation*}
+    \begin{aligned}
+        \text{kontinuierlich: }(i*k)(x) &= \int_{-\infty}^{\infty}i(y)k(x-y)dy\\
+        \text{diskret: }(I*K)(x) &= \sum_{m=-\infty}^{\infty}I(m)K(n-m)
+    \end{aligned}
+\end{equation*}
+
+mit $i/I$ als Eingabe und $k/K$ als Filter (auch: Kernelfunktion). Die Ausgabe $I*K$ heißt auch \emph{Feature Map}. Einfaches Anwendungsbeispiel:
+\emph{Denoising} von verrauschten Daten.\\
+
+\underline{\emph{Intuition}}: Man schiebt den Filter (eine z.B. $3\times 3$-Matrix) über das Bild (Matrix mit Graustufenwerten oder 3 RGB Matrizen) und berechnet das Skalarprodukt zwischen Filter und Bildausschnitt. Dieses Skalarprodukt wird anschließend in eine Aktivierungsfunktion (z.B. ReLU) gegeben.\\
+
+\underline{\emph{Vorteil}} ggü. ANN: 
+\begin{itemize}
+    \item reletiv wenig Kanten zwischen den einzelnen Schichten (\emph{Sparse Interaction}), da jedes Neuron nur mit einem kleinen Ausschnitt der vorherigen Schicht verbunden ist.
+    \item Es gibt eine ganze Menge an Kanten zwischen den einzelnen Schichten die das gleiche Kantengewicht haben (Stichwort: \emph{Parameter Sharing}).
+\end{itemize}
+
+\underline{\textbf{Padding}}:
+\begin{itemize}
+    \item \emph{Valid}: keine Randbehandlung, Filter wird nur über die Bildmatrix geschoben, wenn er komplett auf der Bildmatrix liegt $\rightarrow$ Ausgabe (Feature Map) kleiner als Eingabe.
+    \item \emph{Half/Same}: Um die gesamte Matrix wird ein Rahmen (z.B. beim \emph{Zero-Padding} mit Werten $0$) gezogen, sodass die Ausgabe die gleiche Größe wie die Eingabe hat.
+    \item \emph{Full}: Padding wird hinzugefügt, sodass die Ausgabe die Größe der Eingabe plus die Größe des Filters minus 1 hat.
+\end{itemize}
+
+\underline{\textbf{Stride/Schrittweite}}: Bestimmt, um wieviele Pixel/Positionen in der Matrix der Filter verschoben wird (horizontal und vertikal). Je höher der Stride, desto kleiner wird die Feature-Map.\\
+
+\underline{\textbf{Pooling}}: Reduziert die Dimensionalität der Feature-Map, indem es den maximalen Wert (Max-Pooling) oder den Durchschnittswert (Average-Pooling) eines Fensters berechnet. Wird i.d.R. abwechselnd zur Faltung angewandt.\\
+
+Letzter Teil eines CNN ist ein normales ANN (Feedforward-Netzwerk), das die Ausgabe der Faltungsschichten verarbeitet und die eigentliche Klassifikation vornimmt.\\
