@@ -1,3 +1,7 @@
 \subsection{Aktives Reinforcement-Learning}
 \label{aktivesRL}
 Während des Lernens der Nutzenwerte wird auch direkt die optimale Strategie gelernt.\\
+
+Unterschied zum passiven RL: In jedem Zustand werden verschiedene Aktionen ausprobiert (\emph{\textbf{Exploration}}) um zu erlenen, welche Aktion optimal ist. Dieses Wissen wird anschließend ausgenutzt (\emph{\textbf{Exploitation}}) um gewinnbringend in einer Umgebung zu agieren. Um das \emph{exploration vs. expolitation}- Dilemma zu lösen (weitere alternative Strategien untersuchen vs. die auf den ersten Blick beste Strategie zu wählen), kann eine \emph{Meta-Strategie} benutzt werden, wie z.B. die \underline{\textbf{$\epsilon$\emph{-greedy} Strategie}}: $\epsilon\in[0,1]$ ist die Wahrscheinlichkeit, mit der \emph{exploration} (in einem Zustand $s$ wird eine zufällige Aktion ausgewählt) der \emph{exploitation} ($\pi(s)$ wird ausgeführt) vorgezogen wird.\\
+
+\underline{\textbf{Q-Learning}}: TD-Ansatz, der den meisten modernen Ansätzen zum RF unterliegt. Dabei wird nicht der Nutzen ($U$) der Zustände gelernt, sondern der Nutzen der Zustands-Aktions-Paare ($Q$). Der Nutzen eines Zustands-Aktions-Paares ist das gewichtete Mittel aller Episoden, die in diesem Zustand mit dieser Aktion starten. Es wird kein Modell der Umgebung (insb. der Übergangswahrscheinlichkeiten $P$) gelernt ($\rightarrow$ modellfreier Ansatz/model free method). \\

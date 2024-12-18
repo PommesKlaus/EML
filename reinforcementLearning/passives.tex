@@ -2,3 +2,13 @@
 \label{passivesRL}
 
 Methoden, die bereits eine festgelegte Strategie annehmen und ausschließlich die Nutzenwerte der Zustände erlernen.\\
+
+Strategieevaluation wie bei Markov-Ketten mit dem Unterschied, dass die Effekte von Aktionen (also insb. die Transaktionswahrscheinlichkeiten P) zunächst nicht bekannt sind. Ein Probelauf hat eine direkte Entsprechung zu einer (initialen) Episode, jedoch enthält ein Probelauf noch die zusätzlichen Informationen zu Belohnungen.\\
+
+Der Nutzen eines Zustands (bzgl. einer Strategie $\pi$) ist das gewichtete Mittel aller Episoden, die in diesem Zustand starten.\\
+
+\underline{\textbf{Temporal Difference Learning (TD-Learning)}}: allgemeine Methode, die die Nutzen der besuchten Zustände \emph{während} der Probeläufe in der Umgebung laufend aktualisiert. Hierzu wird bei jeder neuen Beobachtung $o=(s,\pi(s), s',r)$ der Wert $u^\gamma(s|\pi)$ so angepasst, dass er mit $o$ kompatibel ist. Die konkrete \emph{Updateregel} des TD mit dem \emph{Lernparameter} $\alpha\in[0,1]$ und dem \emph{Discountfaktor} $\gamma$ bei einer neuen Beobachtung $o=(s,\pi(s), s',r)$ ist gegeben durch:
+\begin{equation*}
+u^\gamma(s|\pi) := u^\gamma(s|\pi) + \alpha \cdot ( \underbrace{r + \gamma \cdot u^\gamma(s'|\pi)}_\text{gerade beobachteter Nutzen} - \underbrace{u^\gamma(s|\pi)}_\text{bisher geschätzter Nutzen} )
+\end{equation*}
+Dabei ist der Lernparameter $\alpha$ üblicherweise nicht konstant, sondern nimmt im Laufe der Zeit ab; z.B. indem $\alpha=1/n$ mit $n=$ Anzahl der Beobachtungen. Bei der Updateregel wird die Umgebung nicht explitit sondern nur Implizit durch die Beobachtungen $o$ berücksichtigt.\\

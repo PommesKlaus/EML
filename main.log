@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.15)  18 DEC 2024 00:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.15)  18 DEC 2024 17:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -798,21 +798,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--1
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+
+Overfull \hbox (5.77208pt too wide) in paragraph at lines 10--11
+[]$[]$\OT1/cmr/m/n/10 : all-ge-mei-ne Me-tho-de, die die Nut-zen der be-such-ten Zust[]ande
+ []
+
 ) (./reinforcementLearning/aktives.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--1
+Underfull \hbox (badness 10000) in paragraph at lines 13--1
 
  []
 
-)
-Underfull \hbox (badness 10000) in paragraph at lines 3--13
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-) [11
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+[11
 
 
 
-]
+])
+Underfull \hbox (badness 10000) in paragraph at lines 7--13
+
+ []
+
+) [12]
 \openout2 = `deepLearning/deepLearning.aux'.
 
  (./deepLearning/deepLearning.tex (./deepLearning/künstlicheNN.tex
@@ -825,27 +855,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--15
 
  []
 
-<deepLearning/h_tresh.png, id=65, 371.3875pt x 316.18124pt>
+<deepLearning/h_tresh.png, id=69, 371.3875pt x 316.18124pt>
 File: deepLearning/h_tresh.png Graphic file (type png)
 <use deepLearning/h_tresh.png>
 Package pdftex.def Info: deepLearning/h_tresh.png  used on input line 23.
 (pdftex.def)             Requested size: 72.55156pt x 61.76364pt.
-<deepLearning/h_id.png, id=66, 375.4025pt x 316.18124pt>
+<deepLearning/h_id.png, id=70, 375.4025pt x 316.18124pt>
 File: deepLearning/h_id.png Graphic file (type png)
 <use deepLearning/h_id.png>
 Package pdftex.def Info: deepLearning/h_id.png  used on input line 25.
 (pdftex.def)             Requested size: 72.55156pt x 61.10268pt.
-<deepLearning/h_logit.png, id=67, 375.4025pt x 316.18124pt>
+<deepLearning/h_logit.png, id=71, 375.4025pt x 316.18124pt>
 File: deepLearning/h_logit.png Graphic file (type png)
 <use deepLearning/h_logit.png>
 Package pdftex.def Info: deepLearning/h_logit.png  used on input line 27.
 (pdftex.def)             Requested size: 72.55156pt x 61.10268pt.
-<deepLearning/h_tanh.png, id=68, 375.4025pt x 316.18124pt>
+<deepLearning/h_tanh.png, id=72, 375.4025pt x 316.18124pt>
 File: deepLearning/h_tanh.png Graphic file (type png)
 <use deepLearning/h_tanh.png>
 Package pdftex.def Info: deepLearning/h_tanh.png  used on input line 29.
 (pdftex.def)             Requested size: 72.55156pt x 61.10268pt.
-<deepLearning/h_relu.png, id=69, 375.4025pt x 316.18124pt>
+<deepLearning/h_relu.png, id=73, 375.4025pt x 316.18124pt>
 File: deepLearning/h_relu.png Graphic file (type png)
 <use deepLearning/h_relu.png>
 Package pdftex.def Info: deepLearning/h_relu.png  used on input line 31.
@@ -860,7 +890,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
 
-[12
+[13
 
 
 
@@ -879,7 +909,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
  []
 
-<deepLearning/EinfachesANN.png, id=78, 565.11125pt x 141.52875pt>
+<deepLearning/EinfachesANN.png, id=83, 565.11125pt x 141.52875pt>
 File: deepLearning/EinfachesANN.png Graphic file (type png)
 <use deepLearning/EinfachesANN.png>
 Package pdftex.def Info: deepLearning/EinfachesANN.png  used on input line 57.
@@ -904,7 +934,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
-[13 <./deepLearning/EinfachesANN.png>]
+[14 <./deepLearning/EinfachesANN.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
@@ -929,7 +959,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
-[14]
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
@@ -954,7 +984,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--30
 
  []
 
-<deepLearning/rnn_overview.png, id=90, 1028.84375pt x 571.13374pt>
+<deepLearning/rnn_overview.png, id=93, 1028.84375pt x 571.13374pt>
 File: deepLearning/rnn_overview.png Graphic file (type png)
 <use deepLearning/rnn_overview.png>
 Package pdftex.def Info: deepLearning/rnn_overview.png  used on input line 36.
@@ -964,7 +994,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--40
 
  []
 
-[15 <./deepLearning/rnn_overview.png>]) (./deepLearning/repräsentationen.tex
+[16 <./deepLearning/rnn_overview.png>]) (./deepLearning/repräsentationen.tex
 Underfull \hbox (badness 10000) in paragraph at lines 53--1
 
  []
@@ -974,7 +1004,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-<deepLearning/autoencoder.png, id=95, 653.44125pt x 429.605pt>
+<deepLearning/autoencoder.png, id=98, 653.44125pt x 429.605pt>
 File: deepLearning/autoencoder.png Graphic file (type png)
 <use deepLearning/autoencoder.png>
 Package pdftex.def Info: deepLearning/autoencoder.png  used on input line 10.
@@ -999,13 +1029,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
-[16 <./deepLearning/autoencoder.png>]
-<deepLearning/discriminator.png, id=100, 717.68124pt x 214.8025pt>
+[17 <./deepLearning/autoencoder.png>]
+<deepLearning/discriminator.png, id=103, 717.68124pt x 214.8025pt>
 File: deepLearning/discriminator.png Graphic file (type png)
 <use deepLearning/discriminator.png>
 Package pdftex.def Info: deepLearning/discriminator.png  used on input line 27.
 (pdftex.def)             Requested size: 241.84842pt x 72.3829pt.
-<deepLearning/generator.png, id=101, 1042.89626pt x 214.8025pt>
+<deepLearning/generator.png, id=104, 1042.89626pt x 214.8025pt>
 File: deepLearning/generator.png Graphic file (type png)
 <use deepLearning/generator.png>
 Package pdftex.def Info: deepLearning/generator.png  used on input line 33.
@@ -1015,7 +1045,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--8
 
  []
 
-) [17 <./deepLearning/discriminator.png> <./deepLearning/generator.png>] (./main.aux (./preface/preface.aux) (./supervisedLearning/supervisedLearning.aux) (./unsupervisedLearning/unsupervisedLearning.aux) (./reinforcementLearning/reinforcementLearning.aux) (./deepLearning/deepLearning.aux))
+) [18 <./deepLearning/discriminator.png> <./deepLearning/generator.png>] (./main.aux (./preface/preface.aux) (./supervisedLearning/supervisedLearning.aux) (./unsupervisedLearning/unsupervisedLearning.aux) (./reinforcementLearning/reinforcementLearning.aux) (./deepLearning/deepLearning.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1024,16 +1054,16 @@ L3 programming layer <2024-01-22>
 Here is how much of TeX's memory you used:
  18235 strings out of 476129
  375069 string characters out of 5793186
- 1945975 words of memory out of 5000000
+ 1944975 words of memory out of 5000000
  39846 multiletter control sequences out of 15000+600000
  565473 words of font info for 62 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 102i,24n,107p,738b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,24n,107p,931b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/c/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (17 pages, 877366 bytes).
+Output written on main.pdf (18 pages, 882938 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
+ 202 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  78 words of extra memory for PDF output out of 10000 (max. 10000000)
 

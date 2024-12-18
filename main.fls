@@ -360,6 +360,7 @@ INPUT reinforcementLearning/passives.tex
 INPUT ./reinforcementLearning/aktives.tex
 INPUT ./reinforcementLearning/aktives.tex
 INPUT reinforcementLearning/aktives.tex
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT ./deepLearning/deepLearning.tex
 INPUT ./deepLearning/deepLearning.tex
 OUTPUT deepLearning/deepLearning.aux
@@ -401,7 +402,6 @@ INPUT ./deepLearning/EinfachesANN.png
 INPUT ./deepLearning/EinfachesANN.png
 INPUT ./deepLearning/EinfachesANN.png
 INPUT ./deepLearning/EinfachesANN.png
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib5.tfm
